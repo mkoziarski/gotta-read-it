@@ -4,9 +4,10 @@
  * http://blog.fastmail.fm/2012/02/20/building-the-new-ajax-mail-ui-part-2-better-than-templates-building-highly-dynamic-web-pages/
  *
  * Adapted as an AMD module
+ * Fixed Array check
  */
 
-define(function() {
+define(['util'], function(util) {
     var doc = document;
 
     var directProperties = {
@@ -46,7 +47,7 @@ define(function() {
             node = children[i];
             if (node) {
                 // TODO
-                if (node instanceof Array) {
+                if (util.isArray(node)) {
                     appendChildren(el, node);
                 } else {
                     if (typeof node === 'string') {
@@ -61,7 +62,7 @@ define(function() {
     var splitter = /(#|\.)/;
 
     var create = function (tag, props, children) {
-        if (props instanceof Array) {
+        if (util.isArray(props)) {
             children = props;
             props = null;
         }
