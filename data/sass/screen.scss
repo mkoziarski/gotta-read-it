@@ -1,0 +1,215 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@font-face {
+    font-family: 'LatoLatin';
+    src: url('fonts/LatoLatin-Regular.woff') format('woff'); /* Modern Browsers */
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
+$font-stack: 'LatoLatin', sans-serif;
+
+$page-b-color: white;
+$page-text-color: #282828;
+$status-head-brd-color: #e0e0e0;
+
+/*  -------------------------------------------------------------- General -- */
+
+html {
+    font: 100% $font-stack;
+    background: $page-b-color;
+    color: $page-text-color;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+/*  --------------------------------------------------------- Config panel -- */
+
+#config {
+    position: absolute;
+    z-index: 10;
+    bottom: 100%;
+    box-sizing: border-box;
+    border-bottom: 1px solid $status-head-brd-color;
+    padding: 1em 3em;
+    width: 100%;
+    max-height: 75%;
+    overflow: auto;
+    background: $page-b-color;
+    transition: transform 0.3s;
+
+    #btn-close-config {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        border: none;
+        padding: 0;
+        background: none;
+        font-size: 1.8em;
+        line-height: 0.5;
+    }
+
+    &.open {
+        transform: translateY(100%);
+    }
+
+    h1 {
+        font-size: 1em;
+        font-weight: normal;
+        margin: 2em 0 0;
+    }
+
+    h1:first-child {
+        margin: 1em 0 0;
+    }
+
+    ul {
+        padding: 0;
+        list-style-type: none;
+        -moz-column-width: 10.625em;
+
+        input[type=checkbox] {
+            display: inline-block;
+            position: relative;
+            top: 0.1875em;
+        }
+    }
+
+    input[type=text] {
+        width: 11em;
+    }
+}
+
+/*  ----------------------------------------------------------------- Main -- */
+
+#stuff {
+    position: relative;
+    transition: transform 0.3s;
+
+    #toolbar {
+        position: absolute;
+        z-index: 15;
+        top: -1px;
+        right: 3em;
+        padding-top: 1.25em;
+        background: $page-b-color;
+
+        button {
+            display: inline-block;
+            margin-left: 1.5em;
+            background: none;
+            border: none;
+            padding: 0;
+
+            [class^="icon-"] {
+                display: inline-block;
+                position: relative;
+                margin-right: 0.5em;
+            }
+
+            .icon-cogs {
+                top: 0.125em;
+                font-size: 1.125em;
+            }
+
+            .icon-spinner {
+                top: 0.0625em;
+            }
+        }
+    }
+}
+
+/*  -------------------------------------------------------------- Columns -- */
+
+#column-0, #column-1 {
+    position: absolute;
+    top: 3em;
+    width: calc(50% - 4.5em);
+}
+
+#column-0 {
+    left: 3em;
+}
+
+#column-1 {
+    left: calc(50% + 1.5em);
+}
+
+/*  ----------------------------------------------------------- List boxes -- */
+
+/* base box layout - 2 columns */
+.cat {
+    margin-top: 1em;
+}
+
+.cat h1 {
+    margin: 0 0 1rem;
+    border-bottom: 1px solid $page-text-color;
+    padding: 0.625rem 0;
+    font-size: 1.5em;
+    font-weight: normal;
+    text-align: center;
+}
+
+.cat h2 {
+    margin: 0;
+    border-bottom: 1px solid $status-head-brd-color;
+    padding-bottom: 0.125rem;
+    font-size: 0.75em;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+.cat ul {
+    margin: 0;
+    padding: 0.5rem 0 0;
+    list-style-type: none;
+}
+
+.cat ul li {
+    line-height: 1.5;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: clip ellipsis;
+
+    a {
+        text-decoration: none;
+        color: $page-text-color;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    &.fake {
+        height: 1rem;
+    }
+
+    &.displace-anim {
+        transition: padding 0.4s;
+    }
+
+    &.displaced {
+        padding-top: 1.5em;
+    }
+
+    &.shrink-anim {
+        opacity: 0;
+        transition: height 0.4s;
+    }
+
+    &.shrinked {
+        height: 0;
+    }
+
+    &.hidden {
+        display: none;
+    }
+}

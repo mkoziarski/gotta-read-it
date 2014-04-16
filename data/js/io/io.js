@@ -1,6 +1,6 @@
-self.port.on("response", function(results) {
+self.port.on("response", function(response) {
     var event = document.createEvent('CustomEvent');
-    event.initCustomEvent("bookmark-response", true, true, results);
+    event.initCustomEvent("bookmark-response", true, true, response);
     document.documentElement.dispatchEvent(event);
 });
 

@@ -2,13 +2,34 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>bookmark agenda</title>
+        <title>Gotta read it</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <link href="css/icons.css" media="screen" rel="stylesheet" type="text/css" />
+        <link href="css/screen.css" media="screen" rel="stylesheet" type="text/css" />
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <link rel="shortcut icon" href="favicon.png">
         <script data-main="js/app" src="js/lib/require.js"></script>
     </head>
+        <section id="config">
+            <button id="btn-close-config">×</button>
+            <h1>Pick your categories:</h1>
+            <ul id="all-tags">
+            </ul>
+            <h1>Use this tag to filter all bookmarks:</h1>
+            <p>
+                <input type="text" id="filter-tag">
+            </p>
+        </section>
+        <div id="stuff">
+            <div id="toolbar">
+                <button id="btn-refresh"><span class="icon-spinner"></span> Refresh</button>
+                <button id="btn-settings"><span class="icon-cogs"></span> Settings</button>
+            </div>
+            <div id="column-0"></div>
+            <div id="column-1"></div>
+        </div>
     <body>
     </body>
 </html>

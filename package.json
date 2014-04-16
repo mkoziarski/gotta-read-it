@@ -1,9 +1,9 @@
 {
-    "name": "bookmark-agenda",
-    "title": "bookmark agenda",
+    "name": "gotta-read-it",
+    "title": "Gotta read it",
     "id": "jid1-BdB8dVjcBZW6jQ",
-    "description": "a basic add-on",
-    "author": "",
+    "description": "Create clear and simple lists of web content to catch up with using Firefox bookmarks",
+    "author": "Michał Koziarski",
     "license": "MPL 2.0",
     "version": "0.1"
 }
