@@ -1,9 +1,10 @@
 {
     "name": "gotta-read-it",
     "title": "Gotta read it",
+    "icon": "icon.png",
     "id": "jid1-BdB8dVjcBZW6jQ",
-    "description": "Create clear and simple lists of web content to catch up with using Firefox bookmarks",
+    "description": "Create clear and simple, categorized lists of web pages you want to catch up with, out of your Firefox bookmarks.",
     "author": "Michał Koziarski",
-    "license": "MPL 2.0",
+    "license": "GPL 2.0",
     "version": "0.1"
 }
