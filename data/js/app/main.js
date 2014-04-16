@@ -358,7 +358,7 @@ define(['domReady', 'sugarDom'], function(domReady, el) {
 
     function setupControls() {
         var panel = document.getElementById('config'),
-            stuff = document.getElementById('stuff')
+            stuff = document.getElementById('stuff'),
             settingsBtn = document.getElementById('btn-settings'),
             refreshBtn = document.getElementById('btn-refresh'),
             closeConfigBtn = document.getElementById('btn-close-config');
