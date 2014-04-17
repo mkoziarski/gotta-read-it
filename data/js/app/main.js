@@ -413,7 +413,7 @@ define(['domReady', 'sugarDom'], function(domReady, el) {
             if (event.detail.allTags) {
                 receiveAllTags(event);
             }
-            if (event.detail.filterTag) {
+            if (event.detail.filterTag !== undefined) {
                 receiveFilterTag(event);
             }
         }, false);
