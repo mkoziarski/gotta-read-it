@@ -12,21 +12,21 @@
 }
 
 /*  -------------------------------------------------------------- General -- */
-/* line 22, ../sass/screen.scss */
+/* line 22, ../../../sass/screen.scss */
 html {
   font: 100% "LatoLatin", sans-serif;
   background: white;
   color: #282828;
 }
 
-/* line 28, ../sass/screen.scss */
+/* line 28, ../../../sass/screen.scss */
 html, body {
   margin: 0;
   padding: 0;
 }
 
 /*  --------------------------------------------------------- Config panel -- */
-/* line 35, ../sass/screen.scss */
+/* line 35, ../../../sass/screen.scss */
 #config {
   position: absolute;
   z-index: 10;
@@ -40,7 +40,7 @@ html, body {
   background: white;
   transition: transform 0.3s;
 }
-/* line 48, ../sass/screen.scss */
+/* line 48, ../../../sass/screen.scss */
 #config #btn-close-config {
   position: absolute;
   top: 1rem;
@@ -51,44 +51,44 @@ html, body {
   font-size: 1.8em;
   line-height: 0.5;
 }
-/* line 59, ../sass/screen.scss */
+/* line 59, ../../../sass/screen.scss */
 #config.open {
   transform: translateY(100%);
 }
-/* line 63, ../sass/screen.scss */
+/* line 63, ../../../sass/screen.scss */
 #config h1 {
   font-size: 1em;
   font-weight: normal;
   margin: 2em 0 0;
 }
-/* line 69, ../sass/screen.scss */
+/* line 69, ../../../sass/screen.scss */
 #config h1:first-child {
   margin: 1em 0 0;
 }
-/* line 73, ../sass/screen.scss */
+/* line 73, ../../../sass/screen.scss */
 #config ul {
   padding: 0;
   list-style-type: none;
   -moz-column-width: 10.625em;
 }
-/* line 78, ../sass/screen.scss */
+/* line 78, ../../../sass/screen.scss */
 #config ul input[type=checkbox] {
   display: inline-block;
   position: relative;
   top: 0.1875em;
 }
-/* line 85, ../sass/screen.scss */
+/* line 85, ../../../sass/screen.scss */
 #config input[type=text] {
   width: 11em;
 }
 
 /*  ----------------------------------------------------------------- Main -- */
-/* line 92, ../sass/screen.scss */
+/* line 92, ../../../sass/screen.scss */
 #stuff {
   position: relative;
   transition: transform 0.3s;
 }
-/* line 96, ../sass/screen.scss */
+/* line 96, ../../../sass/screen.scss */
 #stuff #toolbar {
   position: absolute;
   z-index: 15;
@@ -97,7 +97,7 @@ html, body {
   padding-top: 1.25em;
   background: white;
 }
-/* line 104, ../sass/screen.scss */
+/* line 104, ../../../sass/screen.scss */
 #stuff #toolbar button {
   display: inline-block;
   margin-left: 1.5em;
@@ -105,48 +105,48 @@ html, body {
   border: none;
   padding: 0;
 }
-/* line 111, ../sass/screen.scss */
+/* line 111, ../../../sass/screen.scss */
 #stuff #toolbar button [class^="icon-"] {
   display: inline-block;
   position: relative;
   margin-right: 0.5em;
 }
-/* line 117, ../sass/screen.scss */
+/* line 117, ../../../sass/screen.scss */
 #stuff #toolbar button .icon-cogs {
   top: 0.125em;
   font-size: 1.125em;
 }
-/* line 122, ../sass/screen.scss */
+/* line 122, ../../../sass/screen.scss */
 #stuff #toolbar button .icon-spinner {
   top: 0.0625em;
 }
 
 /*  -------------------------------------------------------------- Columns -- */
-/* line 131, ../sass/screen.scss */
+/* line 131, ../../../sass/screen.scss */
 #column-0, #column-1 {
   position: absolute;
   top: 3em;
   width: calc(50% - 4.5em);
 }
 
-/* line 137, ../sass/screen.scss */
+/* line 137, ../../../sass/screen.scss */
 #column-0 {
   left: 3em;
 }
 
-/* line 141, ../sass/screen.scss */
+/* line 141, ../../../sass/screen.scss */
 #column-1 {
   left: calc(50% + 1.5em);
 }
 
 /*  ----------------------------------------------------------- List boxes -- */
 /* base box layout - 2 columns */
-/* line 148, ../sass/screen.scss */
+/* line 148, ../../../sass/screen.scss */
 .cat {
   margin-top: 1em;
 }
 
-/* line 152, ../sass/screen.scss */
+/* line 152, ../../../sass/screen.scss */
 .cat h1 {
   margin: 0 0 1rem;
   border-bottom: 1px solid #282828;
@@ -156,7 +156,7 @@ html, body {
   text-align: center;
 }
 
-/* line 161, ../sass/screen.scss */
+/* line 161, ../../../sass/screen.scss */
 .cat h2 {
   margin: 0;
   border-bottom: 1px solid #e0e0e0;
@@ -166,51 +166,51 @@ html, body {
   text-transform: uppercase;
 }
 
-/* line 170, ../sass/screen.scss */
+/* line 170, ../../../sass/screen.scss */
 .cat ul {
   margin: 0;
   padding: 0.5rem 0 0;
   list-style-type: none;
 }
 
-/* line 176, ../sass/screen.scss */
+/* line 176, ../../../sass/screen.scss */
 .cat ul li {
   line-height: 1.5;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: clip ellipsis;
 }
-/* line 182, ../sass/screen.scss */
+/* line 182, ../../../sass/screen.scss */
 .cat ul li a {
   text-decoration: none;
   color: #282828;
 }
-/* line 187, ../sass/screen.scss */
+/* line 187, ../../../sass/screen.scss */
 .cat ul li a:hover {
   text-decoration: underline;
 }
-/* line 191, ../sass/screen.scss */
+/* line 191, ../../../sass/screen.scss */
 .cat ul li.fake {
   height: 1rem;
 }
-/* line 195, ../sass/screen.scss */
+/* line 195, ../../../sass/screen.scss */
 .cat ul li.displace-anim {
   transition: padding 0.4s;
 }
-/* line 199, ../sass/screen.scss */
+/* line 199, ../../../sass/screen.scss */
 .cat ul li.displaced {
   padding-top: 1.5em;
 }
-/* line 203, ../sass/screen.scss */
+/* line 203, ../../../sass/screen.scss */
 .cat ul li.shrink-anim {
   opacity: 0;
   transition: height 0.4s;
 }
-/* line 208, ../sass/screen.scss */
+/* line 208, ../../../sass/screen.scss */
 .cat ul li.shrinked {
   height: 0;
 }
-/* line 212, ../sass/screen.scss */
+/* line 212, ../../../sass/screen.scss */
 .cat ul li.hidden {
   display: none;
 }
