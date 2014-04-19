@@ -35,6 +35,7 @@ define(['domReady', 'sugarDom'], function(domReady, el) {
             var that = this;
 
             this.classList.remove('displaced');
+            // TODO use transitionend rather than timeout
             setTimeout(function() {
                 that.classList.remove('displace-anim');
             }, 500);
