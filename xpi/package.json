@@ -3,6 +3,9 @@
     "title": "Gotta read it",
     "icon": "icon.png",
     "id": "jid1-BdB8dVjcBZW6jQ",
+    "permissions": {
+        "unsafe-content-script": true
+    },
     "description": "Create clear and simple, categorized lists of web pages you want to catch up with, out of your Firefox bookmarks.",
     "author": "Michał Koziarski",
     "license": "GPL 2.0",
