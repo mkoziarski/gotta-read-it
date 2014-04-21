@@ -338,6 +338,7 @@ define(['domReady', 'sugarDom'], function(domReady, el) {
     }
 
     function moveItem(group, id, src, dest) {
+        // TODO the src parameter is unused
         doRequest({ action: 'order', groupId: group, itemId: id, src: src, dest: dest});
     }
 

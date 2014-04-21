@@ -17,7 +17,7 @@ let searchMethod = function(query, consume) {
 };
 
 let orderMethod = function(request) {
-    var list, index, rebuildFrom, i;
+    var list, index, src, from, to, i;
     console.log('reordering items');
     if (!cats[request.groupId])
         cats[request.groupId] = {
@@ -26,28 +26,43 @@ let orderMethod = function(request) {
         };
     list = cats[request.groupId].list;
     index = cats[request.groupId].index;
+    src = index[request.itemId];
 
-    if (Number.isInteger(request.src)) {
-        // TODO src index probably unnecessary
-        // to remove from list, we can grab it from the index by id
+    // don't change the list if src == dest
+    if (Number.isInteger(src) && request.dest == src)
+        return
+
+    if (Number.isInteger(src)) {
         console.log('list len ' + list.length);
         console.log('splice');
-        list.splice(request.src, 1);
-        rebuildFrom = request.src;
+        list.splice(src, 1);
+        from = src;
+        to = list.length - 1;
         console.log('list len ' + list.length);
     }
+
     if (Number.isInteger(request.dest)) {
         list.splice(request.dest, 0, request.itemId);
-        if (!Number.isInteger(rebuildFrom) || request.dest < rebuildFrom)
-            rebuildFrom = request.dest;
-        // covered by the rebuilding step
-        //index[request.itemId] = request.dest;
+        if (Number.isInteger(from)) {
+            if (request.dest > from) {
+                to = request.dest;
+            } else {
+                to = from;
+                from = request.dest;
+            }
+        } else {
+            from = request.dest;
+            to = list.length - 1;
+        }
     } else {
         delete index[request.itemId];
     }
-    // rebuild index
-    for (i = rebuildFrom; i < list.length; i++) {
-        index[list[i]] = i;
+
+    // reindex list
+    if (Number.isInteger(from)) {
+        for (i = from; i <= to; i++) {
+            index[list[i]] = i;
+        }
     }
 };
 
