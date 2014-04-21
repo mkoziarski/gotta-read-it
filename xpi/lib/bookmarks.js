@@ -97,6 +97,8 @@ let respond = function(request, port) {
         var queued = [];
         var qChecked = [];
         var latest = [];
+        var stale = [];
+        var i, l;
         if (groupData && groupData.list.length) {
             groupData.list.forEach(console.log);
             console.log('user-ordered items present');
@@ -121,10 +123,24 @@ let respond = function(request, port) {
         // end ordering
 
         // check for missing items
-        queued.forEach(function(item) {
-            if (item)
-                qChecked.push(item);
-        });
+        for (i = 0, l = queued.length; i < l; i++) {
+            if (queued[i]) {
+                qChecked.push(queued[i]);
+            } else {
+                console.log('item must have disappeared, removing from list');
+                stale.push(i);
+            }
+        }
+
+        if (stale.length) {
+            stale.forEach(function(item) {
+                groupData.list.splice(item, 1);
+            });
+            for (i = stale[0], l = groupData.list.length; i < l; i++) {
+                groupData.index[groupData.list[i]] = i;
+            }
+        }
+
         var response = {
             tags: queryTags,
             queued: qChecked,
