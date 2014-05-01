@@ -172,6 +172,21 @@ button::-moz-focus-inner {
     text-transform: uppercase;
 }
 
+.cat .ul-wrap {
+    position: relative;
+
+    .ul-overlay {
+        display: none;
+        position: absolute;
+        top: 0;
+        width: 100%;
+
+        div {
+            height: 1.5rem;
+        }
+    }
+}
+
 .cat ul {
     margin: 0;
     padding: 0.5rem 0 0;

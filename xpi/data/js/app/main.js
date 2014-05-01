@@ -203,10 +203,11 @@ define(['domReady', 'sugarDom'], function(domReady, el) {
 
         var i, response = event.detail,
             // TODO are the tags always there?
+            // TODO tags can contain '-' themselves
             groupId = response.tags.join('-'),
             count = groups.length,
             gutter = 3,
-            itemIndex = 0,
+            //itemIndex = 0,
             qFake = el('li.fake'),
             lFake = el('li.fake'),
             box;
@@ -217,11 +218,19 @@ define(['domReady', 'sugarDom'], function(domReady, el) {
                 response.tags.join(', ')
             ]),
             el('h2', ['important']),
-            el('ul.important', [
-                response.queued.map(function(item) {
-                    return addItem(item, true, itemIndex++);
-                }),
-                qFake
+            el('div.ul-wrap', [
+                el('ul.important', [
+                    response.queued.map(function(item, idx) {
+                        return addItem(item, true, idx);
+                    }),
+                    qFake
+                ]),
+                el('div.ul-overlay', [
+                    response.queued.map(function(item, idx) {
+                        return el('div', { 'data-index': idx });
+                    }),
+                    el('div')
+                ])
             ]),
             el('h2', ['latest']),
             el('ul.latest', [
